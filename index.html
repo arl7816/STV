@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Noun counter</title>
+    
+    <script type="module" src="script.js"></script>
+    
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        #output {
+            /* flex: 1; Take up remaining space */
+            margin-right: 2%;
+        }
+
+        #wordTable {
+            flex: 2; /* Take up two-thirds of the remaining space */
+        }
+
+        .container {
+            flex: 1; /* Take up remaining space */
+            display: flex;
+            flex-direction: column; /* Align items vertically */
+            align-items: center; /* Center-align items */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 5%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+
+        #nounsGet, #getMe{
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 3%;
+            min-width: 200px;
+            background-color: rgba(76, 175, 80, 0.5);
+            border-radius: 20px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        #nounsGet:hover, #getMe:hover{
+            background-color: #7fdc84;
+        }
+
+        .input-field {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 50%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <p id="output">
+                Content:
+            </p>
+        </div>
+
+        <div>
+            <table id="wordTable">
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Weight</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody id="wordTableBody">
+                </tbody>
+            </table>
+
+            <div class="container">
+                <input type="text" value="http://example.com" id="input">
+                <div>
+                    <input type="button" value="get nouns" id="nounsGet">
+                    <input type="button" value="get me" id="getMe">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
